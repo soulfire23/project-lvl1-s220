@@ -1,19 +1,31 @@
 import game from '../engine';
 import { getRandomNumber, getRandomMath } from '../utils';
 
-const gameTask = 'What is the result of the expression?\n';
+const gameTask = () => {
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
+  const mathSign = getRandomMath();
 
-const getQuestion = () => `${getRandomNumber()} ${getRandomMath()} ${getRandomNumber()}`;
-const getAnswer = (str) => {
-  const math = str.split(' ');
-  if (math[1] === '+') {
-    return +math[0] + +math[2];
-  } else if (math[1] === '-') {
-    return math[0] - math[2];
+  const rules = 'What is the result of the expression?';
+  const question = `${num1} ${mathSign} ${num2}`;
+  let answer = 0;
+
+  switch (mathSign) {
+    case '+':
+      answer = num1 + num2;
+      break;
+    case '-':
+      answer = num1 - num2;
+      break;
+    case '*':
+      answer = num1 * num2;
+      break;
+    default:
+      break;
   }
-  return math[0] * math[2];
+  return [rules, question, answer];
 };
 
-const newGame = () => game(gameTask, getQuestion, getAnswer);
+const newGame = () => game(gameTask);
 
 export default newGame;

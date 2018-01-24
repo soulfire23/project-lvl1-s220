@@ -1,6 +1,6 @@
 {
   "name": "brain-games-s220",
-  "version": "0.0.14",
+  "version": "0.1.0",
   "description": "Brain Games from Hexlet projects",
   "main": "dist/index.js",
   "bin": {

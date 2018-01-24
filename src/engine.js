@@ -8,17 +8,18 @@ const greeting = () => {
   return name;
 };
 
-const game = (gameTask, getQuestion, getAnswer) => {
+const game = (gameTask) => {
   welcome();
-  console.log(gameTask);
+  console.log(gameTask()[0]);
   const name = greeting();
 
   const play = (userName, count) => {
     if (count < 1) {
       return console.log(`Congratulations, ${userName}!`);
     }
-    const question = getQuestion();
-    const correctAnswer = getAnswer(question).toString();
+    const gameData = gameTask();
+    const question = gameData[1];
+    const correctAnswer = gameData[2].toString();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
