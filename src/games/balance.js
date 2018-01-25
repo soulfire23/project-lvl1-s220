@@ -2,12 +2,23 @@ import game from '../engine';
 import { getRandomNumber } from '../utils';
 
 const gameTask = () => {
-  const num1 = getRandomNumber(1, 1000);
-  const num2 = getRandomNumber(1, 1000);
-
   const rules = 'Balance the given number.';
-  const question = `${num1} ${num2}`;
-  const answer = 0;
+  const question = getRandomNumber(100, 1000).toString();
+
+  const getBalance = (num) => {
+    const numArray = num.split('').sort();
+    for (let i = 0; i < numArray.length; i += 1) {
+      numArray[i] = Number(numArray[i]);
+    }
+    if ((numArray[0] + 1) < numArray[numArray.length - 1]) {
+      numArray[0] += 1;
+      numArray[numArray.length - 1] -= 1;
+      return getBalance(numArray.join(''));
+    }
+    return numArray.join('');
+  };
+
+  const answer = getBalance(question);
 
   return [rules, question, answer];
 };
