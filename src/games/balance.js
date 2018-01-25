@@ -1,10 +1,10 @@
-import game from '../engine';
+import game from '..';
 import { getRandomNumber } from '../utils';
 
-const gameTask = () => {
-  const rules = 'Balance the given number.';
-  const question = getRandomNumber(100, 1000).toString();
+const rules = 'Balance the given number.';
 
+const gameTask = () => {
+  const question = getRandomNumber(100, 1000).toString();
   const getBalance = (num) => {
     const numArray = num.split('').sort();
     for (let i = 0; i < numArray.length; i += 1) {
@@ -20,9 +20,9 @@ const gameTask = () => {
 
   const answer = getBalance(question);
 
-  return [rules, question, answer];
+  return [question, answer];
 };
 
-const newGame = () => game(gameTask);
+const newGame = () => game(gameTask, rules);
 
 export default newGame;

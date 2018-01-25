@@ -1,35 +1,30 @@
-import game from '../engine';
+import game from '..';
 import { getRandomNumber } from '../utils';
+
+const rules = 'Find the greatest common divisor of given numbers.';
+
+const findGCD = (num1, num2) => {
+  let a = num1;
+  let b = num2;
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
+  }
+  return a;
+};
 
 const gameTask = () => {
   const num1 = getRandomNumber(1, 100);
   const num2 = getRandomNumber(1, 100);
 
-  const rules = 'Find the greatest common divisor of given numbers.';
   const question = `${num1} ${num2}`;
-  let answer = 0;
-
-  let maxNum = 0;
-  let minNum = 0;
-
-  if (num1 === num2) {
-    answer = num1;
-  } else if (num1 > num2) {
-    maxNum = num1;
-    minNum = num2;
-  } else {
-    maxNum = num2;
-    minNum = num1;
-  }
-  for (let i = minNum; i > 0; i -= 1) {
-    if (maxNum % i === 0 && minNum % i === 0) {
-      answer = i;
-      break;
-    }
-  }
-  return [rules, question, answer];
+  const answer = findGCD(num1, num2);
+  return [question, answer];
 };
 
-const newGame = () => game(gameTask);
+const newGame = () => game(gameTask, rules);
 
 export default newGame;
