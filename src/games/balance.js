@@ -1,12 +1,12 @@
 import game from '../engine';
-import { getRandomNumber, getRandomMath } from '../utils';
+import { getRandomNumber } from '../utils';
 
 const gameTask = () => {
-  const num1 = getRandomNumber(1, 100);
-  const num2 = getRandomNumber(1, 100);
+  const num1 = getRandomNumber(1, 1000);
+  const num2 = getRandomNumber(1, 1000);
   const mathSign = getRandomMath();
 
-  const rules = 'What is the result of the expression?';
+  const rules = 'Balance the given number.';
   const question = `${num1} ${mathSign} ${num2}`;
   let answer = 0;
 

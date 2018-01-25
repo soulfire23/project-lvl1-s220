@@ -1,10 +1,10 @@
 export const isEven = num => (num % 2 === 0 ? 'yes' : 'no');
-export const getRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 export const getRandomMath = () => {
-  const randomNumber = getRandomNumber();
-  if (randomNumber < 33) {
+  const randomNumber = getRandomNumber(1, 3);
+  if (randomNumber === 1) {
     return '+';
-  } else if (randomNumber > 33 && randomNumber < 66) {
+  } else if (randomNumber === 2) {
     return '-';
   }
   return '*';

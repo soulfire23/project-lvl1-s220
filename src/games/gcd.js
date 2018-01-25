@@ -2,8 +2,8 @@ import game from '../engine';
 import { getRandomNumber } from '../utils';
 
 const gameTask = () => {
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
+  const num1 = getRandomNumber(1, 100);
+  const num2 = getRandomNumber(1, 100);
 
   const rules = 'Find the greatest common divisor of given numbers.';
   const question = `${num1} ${num2}`;
