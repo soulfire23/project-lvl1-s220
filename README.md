@@ -1,4 +1,6 @@
-# project-lvl1-s220
+# Brain Games Project / JS Developer
+
+[Link](https://ru.hexlet.io/projects/2/sessions/220)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/decae9d883f854b5f88e/maintainability)](https://codeclimate.com/github/soulfire23/project-lvl1-s220/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/decae9d883f854b5f88e/test_coverage)](https://codeclimate.com/github/soulfire23/project-lvl1-s220/test_coverage)
